@@ -1,0 +1,20 @@
+.trusted{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    img{
+        width: 12rem;
+    }
+}
+
+@media only screen and (max-width: $bp-medium){
+    .trusted{
+        
+        img{
+            width: 6rem;
+        }
+    }
+
+}

@@ -1,0 +1,158 @@
+#nav-menu {
+	position: sticky;
+	top: 0;
+
+	background-color: #fff;
+	//border-bottom: 2px solid $primary-color;
+	box-shadow: 0 2px 14px -10px #202020;
+	z-index: 10;
+}
+
+.menu {
+	display: grid;
+	grid-template-columns: 2fr 7fr 1fr;
+	align-items: center;
+	font-size: 1.4rem;
+	font-weight: 600;
+
+	&__logo {
+		width: 140px;
+		justify-self: start;
+	}
+
+	&__items {
+		div {
+			display: flex;
+		}
+
+		& li > a {
+			padding: 0.5rem 1.5rem;
+			transition: color 0.4s;
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
+
+	&__register {
+		justify-self: end;
+		a {
+			padding: 0.8rem 2rem;
+			border: 1px solid $primary-color;
+			border-radius: 10px;
+			color: $primary-color;
+			transition: background 0.4s ease-out, color 0.3s;
+			&:hover {
+				background-color: $primary-color;
+				color: $light-color;
+			}
+		}
+	}
+	&__responsive {
+		display: none;
+		width: 35px;
+		height: 35px;
+		border: none;
+		outline: none;
+		background-color: transparent;
+		transition: all 0.4s;
+		cursor: pointer;
+		& span {
+			display: flex;
+			flex-direction: column;
+			//align-items: center;
+			justify-content: space-around;
+			width: 30px;
+			height: 2px;
+			border-radius: 2px;
+			background-color: $dark-color;
+			position: relative;
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				top: 8px;
+				width: 30px;
+				height: 2px;
+				border-radius: 2px;
+				background-color: $dark-color;
+			}
+			&::before {
+				top: -8px;
+			}
+		}
+		&--click {
+			transition: all 0.3s;
+			transform-origin: 50% 50%;
+			span {
+				transform: rotate(45deg);
+			}
+			& span::before {
+				top: 0;
+				transform: rotate(90deg);
+			}
+			& span::after {
+				top: 0;
+			}
+			&:hover {
+				transform: rotate(90deg);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $bp-medium) {
+	.menu {
+		grid-template-columns: repeat(3, 1fr);
+		&__logo {
+			grid-column: 2/3;
+			grid-row: 1/2;
+			justify-self: center;
+		}
+		&__items {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			&>div {
+				padding-top: 4rem;
+				display: flex;
+				flex-direction: column;
+				position: absolute;
+				right: -60rem;
+				background-color: #fff;
+				border-bottom-left-radius: 10px;
+				//transform: translateX(30rem);
+				width: 40vw;
+				height: 100vh;
+
+				& li {
+					margin: 1.4rem 4rem;
+					& > a {
+						padding: 0.5rem;
+					}
+				}
+			}
+		}
+		&__register {
+			grid-column: 3/4;
+			grid-row: 1/2;
+		}
+		&__responsive {
+			display: inline-block;
+		}
+	}
+}
+
+@media only screen and (max-width: $bp-small) {
+	.menu {
+		&__items{
+
+			&>div{
+				width: 50vh;
+			}
+
+		}
+		&__logo {
+			width: 100px;
+		}
+	}
+}

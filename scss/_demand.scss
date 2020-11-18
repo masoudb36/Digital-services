@@ -1,0 +1,37 @@
+.demand{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    // grid-template-columns: repeat( auto-fit, minmax(25rem, 1fr) );
+
+    grid-gap: 3rem;
+    margin-top: 5rem;
+
+    &__item{
+        border-radius:  30px;
+        text-align: center;
+        background-color: $light-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 3rem;
+        & h3{
+            font-size: 1.6rem;
+        }
+        & img{
+            width: 100px;
+            margin: 2rem;
+        }
+    }
+}
+@media only screen and (max-width: $bp-medium){
+    .demand{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+@media only screen and (max-width: $bp-small){
+    .demand{
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,83 @@
+#header {
+}
+
+.sliders {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 15.6rem);
+	display: block;
+	&__item {
+		height: 100%;
+		position: absolute;
+		display: none;
+		grid-template-columns: 2fr 1fr;
+		grid-gap: 2.5rem;
+		align-items: center;
+		transition: all 1s ease-in;
+
+		&--img {
+			width: 75%;
+			transform: translateX(40rem);
+			transition: all 0.4s ease-in;
+		}
+
+		&--info {
+			transform: translateX(-30rem);
+			transition: all 0.4s ease-in;
+
+			& h1 {
+				font-size: 2.4rem;
+			}
+			& p {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+	&__show {
+		& > * {
+			transform: translateX(0);
+			transition: all 1s ease-in;
+		}
+	}
+}
+
+.pagination {
+	margin-top: 3rem;
+	position: absolute;
+	bottom: 1rem;
+	.prev,
+	.next {
+		padding: 0.5rem 1rem;
+		background-color: $light-color;
+		border-radius: 50%;
+		text-align: center;
+		font-size: 1.3rem;
+		cursor: pointer;
+		transition: all 0.3s;
+		&:hover {
+			background-color: $primary-color;
+			color: $light-color;
+		}
+	}
+	.prev {
+		margin-left: 1rem;
+	}
+}
+
+@media only screen and (max-width: $bp-medium) {
+	.sliders {
+		&__item {
+			grid-gap: 1rem;
+			grid-template-columns: 1fr;
+			align-items: center;
+			&--img {
+				width: 70%;
+				align-self: center;
+				justify-self: center;
+			}
+			&--info {
+				margin: 0 4rem 6rem 0;
+			}
+		}
+	}
+}

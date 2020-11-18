@@ -1,0 +1,105 @@
+.container {
+	max-width: $website-width;
+	margin: auto;
+	padding: 0 3rem;
+	overflow: hidden;
+}
+
+.bg {
+	&-light {
+		background-color: $bg-color;
+	}
+	&-dark {
+		background-color: $bg-dark;
+	}
+}
+
+// padding
+
+.py {
+	&-1 {
+		padding: 1rem 0;
+	}
+	&-2 {
+		padding: 2rem 0;
+	}
+	&-3 {
+		padding: 4rem 0;
+	}
+	&-4 {
+		padding: 8rem 0;
+	}
+}
+
+// text
+.lead {
+	font-size: 1.4rem;
+	line-height: 2;
+	padding-bottom: 1rem;
+	color: $text-color;
+}
+
+.title {
+	font-size: 2.8rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	&::before,
+	&::after {
+		content: '';
+		width: 4.5rem;
+		height: 2px;
+        background-color: $line-color;
+        margin: 0 1rem;
+	}
+}
+
+.text-center{
+    text-align: center;
+}
+.sub-title{
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+// text color
+.color-red {
+	color: $primary-color;
+}
+
+.color-line{
+    color: $text-color;
+}
+
+// Button
+
+.btn {
+	font-family: $font-primary;
+	color: $light-color;
+	background-color: $primary-color;
+	padding: 1.2rem 2rem;
+	border-radius: 10px;
+	font-size: 1.3rem;
+	padding-top: 1rem;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 10px;
+		border: 1px solid $dark-color;
+		width: 100%;
+		height: 100%;
+		transform: translate(-3px, -4px);
+		transition: all 0.4s;
+	}
+
+	&:hover::after {
+		transform: none;
+	}
+}

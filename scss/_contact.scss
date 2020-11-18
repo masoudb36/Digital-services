@@ -1,0 +1,64 @@
+.contact {
+	margin-top: 3rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 3rem;
+	align-items: center;
+
+	&__img {
+		justify-self: start;
+		width: 85%;
+	}
+
+	&__form {
+		width: 80%;
+		justify-self: end;
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+		& #description {
+			resize: none;
+			height: 18rem;
+
+			width: 100%;
+		}
+	}
+	&__input {
+		font-family: $font-primary;
+
+		border: 0;
+		height: 4.5rem;
+		margin: 1rem 0;
+		padding: 0.8rem 1.5rem;
+		border-radius: 10px;
+		font-size: 1.4rem;
+		outline: none;
+		&::placeholder {
+			font-family: $font-primary;
+		}
+	}
+	&__btn {
+		margin-top: 3rem;
+		font-weight: 600;
+		font-size: 1.5rem;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+}
+
+@media only screen and (max-width: $bp-medium) {
+	.contact {
+        grid-template-columns: 1fr;
+        &__img {
+            justify-self: center;
+            width: 75%;
+        }
+    
+        &__form {
+            justify-self: center;
+
+        }
+	}
+}
